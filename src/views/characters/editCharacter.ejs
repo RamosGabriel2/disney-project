@@ -1,0 +1,34 @@
+<%- include ('../partials/_header'); %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/updateCharacter/<%= character._id%>" method="POST">
+                            <div class="form-group mb-2">
+                                <input type="text" name="name" placeholder="Name" class="form-control" value="<%= character.name %>">
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="age" placeholder="Age" class="form-control" value="<%= character.age %>">
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="weight" placeholder="Weight" class="form-control" value="<%= character.weight %>">
+                            </div>
+                            <div class="form-group mb-2">
+                                <textarea name="history" cols="80" placeholder="History" class="form-control"><%= character.history %></textarea>
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="movie" placeholder="Movie or Serie" class="form-control" value="<%= character.movie %>">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include ('../partials/_footer'); %>

@@ -1,0 +1,27 @@
+<%- include ('../partials/_header') %>
+
+<div class="container-fluid mb-4">
+    <a href="/addCharacter" class="btn btn-primary">Add a new Character</a>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="row gap-3 row-cols-auto justify-content-center">
+            <% for(var i = 0; i < character.length; i++) { %>
+                <div class="col card gap-2">
+                    <!-- there should be an image here -->
+                    <img src="" alt="">
+                    <div class="card-body">
+                        <p><%= character[i].name %></p>
+                        <div class="d-grid gap-2">
+                            <a href="/editCharacter/<%= character[i]._id %>" class="btn btn-info">Edit</a>
+                            <a href="/deleteCharacter/<%= character[i]._id %>" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include ('../partials/_footer') %>

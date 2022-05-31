@@ -1,0 +1,38 @@
+<%- include ('../partials/_header'); %>
+
+<% if(error){ %>
+    <div class="alert alert-danger alert-dismissible fade show col-md-6 offset-md-3" role="alert">
+        <p><%= errorMsg %></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 mb-5 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/addMovie" method="POST">
+                        <div class="form-group mb-2">
+                            <input type="text" name="title" placeholder="Title" class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="creationDate" placeholder="Creation Date" class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="qualification" placeholder="Qualification" class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="associatedChar" placeholder="Character in the movie" class="form-control">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Add Movie</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ('../partials/_footer'); %>

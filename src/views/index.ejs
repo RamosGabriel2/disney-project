@@ -1,0 +1,65 @@
+<%- include ('partials/_header'); %>
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-md-10">
+                <table class="table table-bordered table-hover caption-top">
+                    <caption>Characters</caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Weight</th>
+                            <th>History</th>
+                            <th>Movies o series</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < character.length; i++) { %>
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td><%= character[i].name %></td>
+                                <td><%= character[i].age %></td>
+                                <td><%= character[i].weight %></td>
+                                <td><%= character[i].history %></td>
+                                <td><%= character[i].movie %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <table class="table table-bordered table-hover caption-top">
+                    <caption>Movies</caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Creation Date</th>
+                            <th>Qualification</th>
+                            <th>Associated Characters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < movie.length; i++) { %>
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td><%= movie[i].title %></td>
+                                <td><%= movie[i].creationDate %></td>
+                                <td><%= movie[i].qualification %></td>
+                                <td><%= movie[i].associatedChar %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<%- include ('partials/_footer'); %>
